@@ -11,7 +11,7 @@ permissions:
 jobs:
     tests:
       name: tests
-      runs-on: ubuntu-lates
+      runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v6
         - uses: actions/setup-go@v6
