@@ -18,5 +18,6 @@ jobs:
           with:
             go-version: '1.25'
         - run: CONFIG_PATH=./config/prod.yaml nohup go run ./cmd/url-shortener/main.go &
+        - run: curl localhost:8082
         - run: sleep 2
         - run: go test ./internal/http-server/handlers/redirect ./internal/http-server/handlers/url/save ./tests -v
