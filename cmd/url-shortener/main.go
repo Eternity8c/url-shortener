@@ -71,6 +71,8 @@ func main() {
 		log.Error("failed to start server")
 	}
 
+	log.Info("server started")
+	
 	log.Error("server stopped")
 }
 
