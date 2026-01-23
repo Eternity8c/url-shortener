@@ -19,10 +19,11 @@ jobs:
             go-version: '1.25'
         - run: CONFIG_PATH=./config/prod.yaml nohup go run ./cmd/url-shortener/main.go &
         - run: |
-            curl -v -X POST localhost:8082/url \
+            curl -X POST localhost:8082/url \
             -H "Content-Type: application/json" \
             -H "username: Shabby8574" \
             -H "password: 1234" \
-            -d '{"url":"1234"}'
+            -d '{"url":"1234"}' \
+            -v
         - run: sleep 2
         - run: go test ./internal/http-server/handlers/redirect ./internal/http-server/handlers/url/save ./tests -v
