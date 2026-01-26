@@ -25,5 +25,5 @@ jobs:
             -H "password: 1234" \
             -d '{"url":"1234"}' \
             -v
-        - run: sleep 2
+        - run: sleep 5
         - run: go test ./internal/http-server/handlers/redirect ./internal/http-server/handlers/url/save ./tests -v
